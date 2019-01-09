@@ -1,0 +1,82 @@
+@(message: String)
+
+<html>
+    <head>
+        <title>File Upload</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <body>
+        <center>
+            <div class="container" style="width: 500;">
+                <h1>Send Email</h1>
+                <br>
+
+                @helper.form(action = routes.HomeController.fileUploadAndSendMail, 'enctype -> "multipart/form-data") {
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="subject" style="align:left">Email Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="body" style="align:left">Email Body</label>
+                            <input type="text" class="form-control" id="body" name="body">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="email" style="align:left">EmailId (Multiple email ids should be comma separated)</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="ccemail">CC EmailId (Multiple cc email ids should be comma separated)</label>
+                            <input type="text" class="form-control" id="ccemail" name="ccemail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="bccemail">BCC EmailId (Multiple bcc email ids should be comma separated)</label>
+                            <input type="text" class="form-control" id="bccemail" name="bccemail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="uploadfile">Upload EmailIds CSV File</label>
+                            <input type="file" id="uploadfile" name="fileUpload">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info">Send Mail</button>
+                            <!--<input type="submit" class="form-control" class="btn btn-info" value="Send Mail">-->
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </center>
+    </body>
+</html>
