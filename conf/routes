@@ -5,5 +5,4 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
-GET     /v1/activateprofile         controllers.HomeController.validateUser(verifyToken: String)
 POST    /v1/uploadFile              controllers.HomeController.fileUploadAndSendMail

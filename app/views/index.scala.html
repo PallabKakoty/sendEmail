@@ -4,69 +4,80 @@
     <head>
         <title>File Upload</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <style>
+            .row {
+                margin-top:12px;
+            }
+        </style>
     </head>
     <body>
         <center>
-            <div class="container" style="width: 500;">
+            <div class="container" style="width: 500; font-size: 14px;">
                 <h1>Send Email</h1>
-                <br>
 
                 @helper.form(action = routes.HomeController.fileUploadAndSendMail, 'enctype -> "multipart/form-data") {
 
-                <div class="row">
+                <div class="row" style="background-color: F5F2FC;">
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="subject" style="align:left">Email Subject</label>
-                            <input type="text" class="form-control" id="subject" name="subject">
+                        <div class="form-group"><br>
+                            <!--<label for="email" style="align:left">EmailId (Multiple email ids should be comma separated)</label>-->
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Mail Ids (Comma separated mail ids)">
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
+                    <div class="col-md-12"><b>OR</b></div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="body" style="align:left">Email Body</label>
-                            <input type="text" class="form-control" id="body" name="body">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="email" style="align:left">EmailId (Multiple email ids should be comma separated)</label>
-                            <input type="text" class="form-control" id="email" name="email">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="ccemail">CC EmailId (Multiple cc email ids should be comma separated)</label>
-                            <input type="text" class="form-control" id="ccemail" name="ccemail">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="bccemail">BCC EmailId (Multiple bcc email ids should be comma separated)</label>
-                            <input type="text" class="form-control" id="bccemail" name="bccemail">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="uploadfile">Upload EmailIds CSV File</label>
+                            <label for="uploadfile">EmailIds CSV </label>
                             <input type="file" id="uploadfile" name="fileUpload">
                         </div>
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="radio" name="sendType" value="one"> Send mails one by one.&nbsp;
+                            <input type="radio" name="sendType" value="all" checked="checked"> Send all mails together.
+                        </div>
+                    </div>
                 </div>
-                <br>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!--<label for="subject" style="align:left">Email Subject</label>-->
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Email Subject">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!--<label for="body" style="align:left">Email Body</label>-->
+                            <input type="text" class="form-control" id="body" name="body" placeholder="Enter Email Body Text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!--<label for="ccemail">CC EmailId (Multiple cc email ids should be comma separated)</label>-->
+                            <input type="text" class="form-control" id="ccemail" name="ccemail" placeholder="CC Mail Ids (Comma separated mail ids)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!--<label for="bccemail">BCC EmailId (Multiple bcc email ids should be comma separated)</label>-->
+                            <input type="text" class="form-control" id="bccemail" name="bccemail" placeholder="BCC Mail Ids (Comma separated mail ids)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="color: red; font-size:13px;">* Enter multiple email ids separated by comma only.</div>
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
