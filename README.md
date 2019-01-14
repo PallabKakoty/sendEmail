@@ -1,3 +1,3 @@
 
-# play-scala-slick sendEmail
+# SendEmail
 
