@@ -1,4 +1,0 @@
-[core]
-  attributesfile = ~/.gitattributes
-[diff "scala"]
-  xfuncname = "^\\s*(.*(def|object|class|trait) .*)$"
